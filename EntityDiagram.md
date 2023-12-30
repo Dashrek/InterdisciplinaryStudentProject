@@ -48,6 +48,11 @@ erDiagram
 	    int Pojemnosc
 	    Numeric ilosc
     }
+    "Suma produktów"{
+	int Produkt_ID
+	Numeric maksymalna_ilosc
+	Numeric aktualna_ilosc
+	}
     "Produkt"{
 	    int Product_ID
 	    varchar Nazwa
@@ -74,6 +79,8 @@ erDiagram
 	    varchar nazwa
 	    Int Obszar_ID
     }
+    "Produkt-półka" ||--o{ "Suma produktow" : "Przechowuje informację o łącznej liczbie produktów"
+    "Kasa" ||--o{ "Suma produktow" : USUWA
     Kasa ||--o{ Transakcja : "OBSŁUGUJE"
     Transakcja ||--o{ "Pozycja transakcji" : ZAWIERA
     "Produkt" ||--o{ "Produkt-półka" : "DOTYCZY"
