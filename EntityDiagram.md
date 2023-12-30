@@ -79,8 +79,8 @@ erDiagram
 	    varchar nazwa
 	    Int Obszar_ID
     }
-    "Produkt-półka" ||--o{ "Suma produktow" : "Przechowuje informację o łącznej liczbie produktów"
-    "Kasa" ||--o{ "Suma produktow" : USUWA
+    "Produkt-półka" ||--o{ "Suma produktów" : "Przechowuje informację o łącznej liczbie produktów"
+    "Kasa" ||--o{ "Suma produktów" : USUWA
     Kasa ||--o{ Transakcja : "OBSŁUGUJE"
     Transakcja ||--o{ "Pozycja transakcji" : ZAWIERA
     "Produkt" ||--o{ "Produkt-półka" : "DOTYCZY"
