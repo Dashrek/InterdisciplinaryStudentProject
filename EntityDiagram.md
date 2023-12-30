@@ -80,7 +80,7 @@ erDiagram
 	    Int Obszar_ID
     }
     "Produkt-półka" ||--o{ "Suma produktów" : "Przechowuje informację o łącznej liczbie produktów"
-    "Kasa" ||--o{ "Suma produktów" : USUWA
+    Transakcja ||--o{ "Suma produktów" : USUWA
     Kasa ||--o{ Transakcja : "OBSŁUGUJE"
     Transakcja ||--o{ "Pozycja transakcji" : ZAWIERA
     "Produkt" ||--o{ "Produkt-półka" : "DOTYCZY"
