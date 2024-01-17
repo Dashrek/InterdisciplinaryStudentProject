@@ -6,14 +6,17 @@ from pddl.requirements import Requirements
 import pandas as pd
 from functools import reduce
 import subprocess
-# set up variables and constants
+import sys
+# translator
 trans = str.maketrans('ąćęłńóśźżĄĆĘŁŃÓŚŹŻ', 'acelnoszzACELNOSZZ')
-wejscie="WEJŚCIE 1"
+wejscie=(lambda a: "WEJŚCIE 1" if len(a)==1 else ( f"{a[-2]} {a[-1]}" if a[-2] == "WEJŚCIE" else "WEJŚCIE 1"))(sys.argv)
+
+dodatki=(sys.argv[1:] if sys.argv[-2]!="WEJŚCIE" else ( sys.argv[1:-2] if len(sys.argv)>3 else ""))
 class DomeneRegionowCreator:
     def __init__(self):
         [self.x, self.z] = variables("x z", types=["location"])
         [self.y] = variables("y", types=["item"])
-
+        self.licznik_problemow=2
         self.from_region = Predicate("from-region", self.x, self.y)
         self.in_region = Predicate("in-region", self.x)
         self.connect_region = Predicate("connect-region", self.x, self.z)
@@ -149,7 +152,7 @@ class DomeneRegionowCreator:
         with open(f"{problem_path}", "w") as file:
             file.write(problem_to_string(self.problem).replace("\n    (:requirements :adl :strips :typing)",""))
             file.close()
-        command = f'pyperplan {domain_path} {problem_path}'
+        command = f'pyperplan {" ".join(dodatki)} {domain_path} {problem_path}'
 
         # Wykonaj polecenie za pomocą subprocess
         try:
@@ -217,19 +220,20 @@ class DomeneRegionowCreator:
                 init1.append(self.from_region(lokacje[naz],itemy[t[1]]))
 
         problem2 = Problem(
-            "problem-1",
+            f"problem-{self.licznik_problemow}",
             domain=self.domain,
             objects=[lokacje[i] for i in lokacje] + [itemy[j] for j in itemy],
             init=init1,
             goal=reduce(lambda a, b: a & b, goal)
         )
+        self.licznik_problemow+=1
         domain_path = 'pddl1/domain.pddl'
         problem_path = 'pddl1/problem1.pddl'
         with open(f"{problem_path}", "w") as file:
             file.write(problem_to_string(problem2).replace("\n    (:requirements :adl :strips :typing)",""))
             file.close()
         # Komenda do wykonania
-        command = f'pyperplan {domain_path} {problem_path}'
+        command = f'pyperplan {" ".join(dodatki)} {domain_path} {problem_path}'
 
         # Wykonaj polecenie za pomocą subprocess
         try:
