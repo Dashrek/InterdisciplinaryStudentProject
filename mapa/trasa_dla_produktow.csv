@@ -1,0 +1,8 @@
+Obszar Id,Nazwa Obszaru,Id Sasiedniego Obszaru,Nazwa Sasiedniego Obszaru,Pole Id,Nazwa Pola,Id Sasiada,Nazwa Sasiada,Id Pólki,Nazwa Pólki,Product Id,Nazwa Produktu
+5,REGAL 1,10005,o_1_5,10,p_0_10,10010,p_1_10,1000,p_0_10_00,1,Pomarancza Luz
+5,REGAL 1,10005,o_1_5,5,p_0_5,10005,p_1_5,501,p_0_5_01,62,Gumka recepturka
+5,REGAL 1,10005,o_1_5,12,p_0_12,10012,p_1_12,1200,p_0_12_00,1,Pomarancza Luz
+40017,REGAL 7,50017,o_5_17,40018,p_4_18,50018,p_5_18,4001801,p_4_18_01,142,Komputer lenovo
+70017,REGAL 9,50017,o_5_17,70020,p_7_20,60020,p_6_20,7002001,p_7_20_01,126,Coca cola 1
+70031,REGAL 10,70027,o_7_27,80031,p_8_31,80030,p_8_30,8003101,p_8_31_01,122,Coca Cola 2l
+80005,REGAL 11,90005,o_9_5,80009,p_8_9,90009,p_9_9,8000900,p_8_9_00,124,Coca cola 1l

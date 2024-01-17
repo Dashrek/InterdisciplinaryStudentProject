@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7e169c2b-0aac-4f4a-9e97-4ce1247bd94a" name="orangepi@192.168.27.9">
+        <fileTransfer accessType="SFTP" host="192.168.27.9" port="22" sshConfigId="399d9542-0383-4cec-9d73-448edf974d87" sshConfig="orangepi@192.168.27.9:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
