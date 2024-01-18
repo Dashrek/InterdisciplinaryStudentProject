@@ -16,3 +16,4 @@ result_df = pd.merge(df_pole_supermarketu, df_pole_supermarketu_inne, left_on='T
 print(result_df)
 for k,j in enumerate(range(5,9)):
     print(k,j)
+print(type(round(248.2)))
