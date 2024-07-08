@@ -15,7 +15,9 @@ Są dwa problemy  w sklepie, jakie miałybyć rozwiązywane przez SI i oba są d
 W drugim pracownik odpowiedzialny otrzymuje trasę, by uzupełnić braki w produktach, które są przypisane do konkretnych półek, maszerując z magazynu, przez wszystkie półki zawierające dany towar do uzupełnienia i wraca do magazynu na koniec.  
 Stopnie.  
 W pierwszym stopniu generowany problem w pddl polegał na przejściu po sklepie między obszarami, podniesieniu/położeniu produktów i marszu do obszaru końcowego końcowego (obszaru z kasą/magazynem).  
-W drugim stopniu- każde przejście po obszarze, było zamieniane na pola, bo obszar składał się z pól. Zastosowanie tego, to rozbicie problemu dużego na małe problemy. Gdyby całość sklepu była zawarta w jednym rysunku, to generowany problem w pddl, miałby bardzo dużo wierzchołków. Przeglądanie takiego grafu wszerz, generowałoby strasznie długi czas rozwiązywania, lub całkowite posypanie się solvera. Przeszukiwanie wszerz bez heurystyki generuje optymalną trasę, ale to nie jest w sumie sztuczna inteligencja, za co została obniżona ocena z tego przedmiotu.  
+W drugim stopniu- każde przejście po obszarze, było zamieniane na pola, bo obszar składał się z pól. Zastosowanie tego, to rozbicie problemu dużego na małe problemy. Gdyby całość sklepu była zawarta w jednym rysunku, to generowany problem w pddl, miałby bardzo dużo wierzchołków. Przeglądanie takiego grafu wszerz, generowałoby strasznie długi czas rozwiązywania, lub całkowite posypanie się solvera. Przeszukiwanie wszerz bez heurystyki generuje optymalną trasę, ale to nie jest w sumie sztuczna inteligencja, za co została obniżona ocena z tego przedmiotu.
+  
+  
 Co udało się wykonać:  
 1. Generator bazy danych z rysunków, które były zamieniane na csv i absorbowane przez Oracle Apex.  
 2. Nie dało się stworzyć serwera z pythonem w obszarze roboczym oracle, co było pokazywane na tutorialach, ze względu na ograniczenia wersji studenckiej.  
